@@ -54,7 +54,7 @@ The following property can be configured:
 | ------------|--------------------------------------------------------|:-------------:|
 | country       | Country for which the prices are to be displayed: DE, AT, CH |   ```DE```    |
 | updateInterval      | Update Interval in seconds                             |  ```86400```  |
-| width       | Chart width in px.                                     |   ```200```   |
-| height      | Chart height in px.                                    |   ```200```   |
+| width       | Chart width in px.                                     |  ```1200```   |
+| height      | Chart height in px.                                    |    ```800```    |
 
 
