@@ -133,9 +133,22 @@ Module.register("MMM-Pelletpreise", {
             },
             options: {
                 responsive: true,
+                plugins: {  // 'legend' now within object 'plugins {}'
+                    legend: {
+                        labels: {
+                            color: "white"
+                        }
+                    }
+                },
                 scales: {
+                    x: {
+                        ticks: {
+                            color: "white"
+                        }
+                    },
                     y: {
                         ticks: {
+                            color: "white",
                             // Include a dollar sign in the ticks
                             callback: function(value, index, ticks) {
                                 return value + '€';
