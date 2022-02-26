@@ -1,0 +1,28 @@
+{
+  "name": "mmm-pelletpreise",
+  "version": "1.0.0",
+  "description": "Chart module for [MagicMirror²](https://github.com/MichMich/MagicMirror). The module displays pellet prices for the current year based on [Chart.js](http://www.chartjs.org/) and the API of [heizpellets24.de](https://www.heizpellets24.de/pelletpreis).",
+  "author": "Markus Eckert",
+  "license": "MIT",
+  "dependencies": {
+    "chart.js": "^3.7.1"
+  },
+  "main": "MMM-Pelletpreise.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eckonator/MMM-Pelletpreise.git"
+  },
+  "keywords": [
+    "MagicMirrir",
+    "Pellet",
+    "Chart"
+  ],
+  "bugs": {
+    "url": "https://github.com/eckonator/MMM-Pelletpreise/issues"
+  },
+  "homepage": "https://github.com/eckonator/MMM-Pelletpreise#readme"
+}
