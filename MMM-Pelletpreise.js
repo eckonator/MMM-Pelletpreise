@@ -26,6 +26,9 @@ Module.register("MMM-Pelletpreise", {
 
 	start: function() {
         this.getJson();
+        setTimeout(function () {
+            this.getJson();
+        }, 60000);
         this.scheduleUpdate();
         this.config = Object.assign({}, this.defaults, this.config);
 		Log.info("Starting module: " + this.name);
