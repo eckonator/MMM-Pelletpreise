@@ -10,7 +10,8 @@
 Module.register("MMM-Pelletpreise", {
 
     jsonData: [],
-
+    days: [],
+    euros: [],
     apiUrl: '',
 
     defaults: {
@@ -26,9 +27,6 @@ Module.register("MMM-Pelletpreise", {
 
 	start: function() {
         this.getJson();
-        setTimeout(function () {
-            this.getJson();
-        }, 60000);
         this.scheduleUpdate();
         this.config = Object.assign({}, this.defaults, this.config);
 		Log.info("Starting module: " + this.name);
@@ -73,16 +71,17 @@ Module.register("MMM-Pelletpreise", {
     },
 
 	getDom: function() {
+        var self = this;
         // Create wrapper element
         const wrapperEl = document.createElement("div");
         wrapperEl.setAttribute("style", "position: relative; display: inline-block;");
 
+        self.euros = [];
+        self.days = [];
+
         var currentYearData = [];
         var currentTime = new Date();
         var currentYear = currentTime.getFullYear()
-
-        var days = [];
-        var euros = [];
 
         //console.log(this.jsonData);
 
@@ -114,10 +113,10 @@ Module.register("MMM-Pelletpreise", {
                     day = (day < 10 ? "0" : "") + day;
 
                     //days.push(day + "." + month + "." + date.getFullYear());
-                    days.push(day + "." + month);
+                    self.days.push(day + "." + month);
                 }
                 if(key === 'value') {
-                    euros.push(value);
+                    self.euros.push(value);
                 }
             }
         }
@@ -125,10 +124,10 @@ Module.register("MMM-Pelletpreise", {
         var chartConfig = {
             type: 'line',
             data: {
-                labels: days,
+                labels: self.days,
                 datasets: [{
                     label: 'Euro / To.',
-                    data: euros,
+                    data: self.euros,
                     fill: true,
                     backgroundColor: 'rgb(255, 255, 255, .3)',
                     borderColor: 'rgb(255, 255, 255)'
