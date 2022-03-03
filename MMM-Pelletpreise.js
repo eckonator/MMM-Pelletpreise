@@ -15,7 +15,7 @@ Module.register("MMM-Pelletpreise", {
 
     defaults: {
         country        : 'DE',  // DE | AT | CH
-        updateInterval : 86400, // 1 day in seconds
+        updateInterval : 86400000, // 1 day in seconds
         width          : 1200,   // width in pixel
         height         : 800    // height in pixel
     },
