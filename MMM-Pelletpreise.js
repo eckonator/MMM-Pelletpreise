@@ -63,9 +63,11 @@ Module.register("MMM-Pelletpreise", {
             // Only continue if the notification came from the request we made
             // This way we can load the module more than once
             this.updateDom();
+            console.log(payload.url);
+            console.log(this.apiUrl);
             if (payload.url === this.apiUrl) {
                 this.jsonData = payload.data;
-                this.updateDom(this.config.updateInterval);
+                this.updateDom();
             }
         }
     },
@@ -166,11 +168,6 @@ Module.register("MMM-Pelletpreise", {
 
         // Init chart.js
         var myChart = new Chart(chartEl.getContext("2d"), chartConfig);
-
-        if (self.euros.length > 0 && self.days.length > 0) {
-            myChart.destroy();
-            myChart = new Chart(chartEl.getContext("2d"), chartConfig);
-        }
 		
         // Set the size
         chartEl.width  = this.config.width;
