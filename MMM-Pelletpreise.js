@@ -165,7 +165,12 @@ Module.register("MMM-Pelletpreise", {
         const chartEl  = document.createElement("canvas");        
 
         // Init chart.js
-        this.chart = new Chart(chartEl.getContext("2d"), chartConfig);
+        var myChart = new Chart(chartEl.getContext("2d"), chartConfig);
+
+        if (self.euros.length > 0 && self.days.length > 0) {
+            myChart.destroy();
+            myChart = new Chart(chartEl.getContext("2d"), chartConfig);
+        }
 		
         // Set the size
         chartEl.width  = this.config.width;
