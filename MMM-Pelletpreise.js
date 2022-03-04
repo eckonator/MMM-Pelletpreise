@@ -59,14 +59,13 @@ Module.register("MMM-Pelletpreise", {
     },
 
     socketNotificationReceived: function (notification, payload) {
-        var self = this;
         if (notification === "MMM-Pelletpreise_JSON_RESULT") {
             // Only continue if the notification came from the request we made
             // This way we can load the module more than once
-            self.updateDom();
-            if (payload.url === self.apiUrl) {
-                self.jsonData = payload.data;
-                self.updateDom(self.config.updateInterval);
+            this.updateDom();
+            if (payload.url === this.apiUrl) {
+                this.jsonData = payload.data;
+                this.updateDom(this.config.updateInterval);
             }
         }
     },
