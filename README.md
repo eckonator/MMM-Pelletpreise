@@ -25,6 +25,12 @@ cd ~/MagicMirror/modules/MMM-Pelletpreise
 npm install
 ````
 
+After MagicMirror Update, maybe it can help to run:
+````
+cd ~/MagicMirror/modules/MMM-Pelletpreise
+./node_modules/.bin/MagicMirror-rebuild
+````
+
 Configure the module in your `config.js` file.
 
 ## Using the module
