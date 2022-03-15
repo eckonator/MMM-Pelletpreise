@@ -26,7 +26,7 @@ module.exports = NodeHelper.create({
 	socketNotificationReceived: function (notification, url) {
 		console.log(notification);
 		if (notification === "MMM-Pelletpreise_GET_JSON") {
-			console.log("MMM-Pelletpreise_GET_JSON received for url:" + url);
+			console.log("MMM-Pelletpreise_GET_JSON received for url: " + url);
 			this.getJson(url);
 		}
 	}
