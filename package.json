@@ -5,7 +5,8 @@
   "author": "Markus Eckert",
   "license": "MIT",
   "dependencies": {
-    "chart.js": "^3.7.1"
+    "chart.js": "^3.7.1",
+    "magicmirror-rebuild": "^1.0.5"
   },
   "main": "MMM-Pelletpreise.js",
   "devDependencies": {},
