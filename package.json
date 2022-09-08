@@ -5,6 +5,7 @@
   "author": "Markus Eckert",
   "license": "MIT",
   "dependencies": {
+    "request": "latest",
     "chart.js": "^3.7.1",
     "magicmirror-rebuild": "^1.0.5"
   },
