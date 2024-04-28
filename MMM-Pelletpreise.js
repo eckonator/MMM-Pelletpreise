@@ -15,7 +15,6 @@ Module.register("MMM-Pelletpreise", {
     apiUrl: '',
 
     defaults: {
-        country        : 'DE',  // DE | AT | CH
         updateInterval : 86400000, // 1 day in milliseconds
         width          : 1200,   // width in pixel
         height         : 800    // height in pixel
@@ -41,20 +40,7 @@ Module.register("MMM-Pelletpreise", {
 
     // Request node_helper to get json from url
     getJson: function () {
-        switch (this.config.country) {
-            case "DE":
-                var countryID = 1;
-                break;
-            case "AT":
-                var countryID = 2;
-                break;
-            case "CH":
-                var countryID = 3;
-                break;
-            default:
-                var countryID = 1;
-        }
-        this.apiUrl = 'https://www.heizpellets24.de/ChartHandler.ashx?ProductId=1&CountryId=' + countryID + '&chartMode=3&defaultRange=false';
+        this.apiUrl = 'https://www.heizpellets24.de/api/site/1/prices/history?amount=3500&productId=20&rangeType=6';
         this.sendSocketNotification("MMM-Pelletpreise_GET_JSON", this.apiUrl);
     },
 
@@ -90,7 +76,7 @@ Module.register("MMM-Pelletpreise", {
         for (var i = 0; i < this.jsonData.length; i++){
             var obj = this.jsonData[i];
             for (var key in obj){
-                var date = new Date(obj['date']);
+                var date = new Date(obj['DateTime']);
                 if(date.getFullYear() === currentYear) {
                     currentYearData.push(obj);
                 }
@@ -104,7 +90,7 @@ Module.register("MMM-Pelletpreise", {
             for (var key in obj){
                 var value = obj[key];
                 //console.log(key + ": " + value);
-                if(key === 'date') {
+                if(key === 'DateTime') {
                     //console.log(key + ": " + value);
                     var date = new Date(value);
 
@@ -117,7 +103,7 @@ Module.register("MMM-Pelletpreise", {
                     //days.push(day + "." + month + "." + date.getFullYear());
                     self.days.push(day + "." + month);
                 }
-                if(key === 'value') {
+                if(key === 'Price') {
                     self.euros.push(value);
                 }
             }

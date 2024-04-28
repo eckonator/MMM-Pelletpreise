@@ -43,7 +43,6 @@ modules: [
         position: 'middle_center',
         header: 'Pelletspreise / aktuelles Jahr',
         config: {
-            country        : 'DE',  // DE | AT | CH
             updateInterval : 86400, // 1 day in seconds
             width          : 1200,   // width in pixel
             height         : 800    // height in pixel
@@ -58,7 +57,6 @@ The following property can be configured:
 
 | Option      | Description                                            | Default value |
 | ------------|--------------------------------------------------------|:-------------:|
-| country       | Country for which the prices are to be displayed: DE, AT, CH |   ```DE```    |
 | updateInterval      | Update Interval in seconds                             |  ```86400```  |
 | width       | Chart width in px.                                     |  ```1200```   |
 | height      | Chart height in px.                                    |    ```800```    |
