@@ -43,6 +43,7 @@ modules: [
         position: 'middle_center',
         header: 'Pelletspreise / aktuelles Jahr',
         config: {
+            amount         : 3500, // amount in kg
             updateInterval : 86400, // 1 day in seconds
             width          : 1200,   // width in pixel
             height         : 800    // height in pixel
@@ -55,10 +56,11 @@ modules: [
 
 The following property can be configured:
 
-| Option      | Description                                            | Default value |
-| ------------|--------------------------------------------------------|:-------------:|
-| updateInterval      | Update Interval in seconds                             |  ```86400```  |
-| width       | Chart width in px.                                     |  ```1200```   |
-| height      | Chart height in px.                                    |    ```800```    |
+| Option         | Description                | Default value |
+|----------------|----------------------------|:-------------:|
+| amount         | Amount in kg               |  ```3000```   |
+| updateInterval | Update Interval in seconds |  ```86400```  |
+| width          | Chart width in px.         |  ```1200```   |
+| height         | Chart height in px.        |    ```800```  |
 
 

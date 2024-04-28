@@ -1,6 +1,6 @@
 /* global Module */
 
-/* MagicMirror²
+/* Magic Mirror
  * Module: MMM-Pelletpreise
  *
  * By Markus Eckert https://github.com/eckonator/
@@ -15,6 +15,7 @@ Module.register("MMM-Pelletpreise", {
     apiUrl: '',
 
     defaults: {
+        amount        : '3500',  // amount in kg
         updateInterval : 86400000, // 1 day in milliseconds
         width          : 1200,   // width in pixel
         height         : 800    // height in pixel
@@ -40,7 +41,7 @@ Module.register("MMM-Pelletpreise", {
 
     // Request node_helper to get json from url
     getJson: function () {
-        this.apiUrl = 'https://www.heizpellets24.de/api/site/1/prices/history?amount=3500&productId=20&rangeType=6';
+        this.apiUrl = 'https://www.heizpellets24.de/api/site/1/prices/history?amount=' + this.config.amount + '&productId=20&rangeType=6';
         this.sendSocketNotification("MMM-Pelletpreise_GET_JSON", this.apiUrl);
     },
 
